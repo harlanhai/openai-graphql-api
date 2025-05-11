@@ -124,7 +124,7 @@ export default {
           try {
             // 构建发送到 OpenAI 的请求
             const openAIRequest = {
-              model: 'gpt-3.5-turbo', // 或您想使用的其他模型
+              model: 'gpt-4', // 或您想使用的其他模型
               messages: [{ role: 'user', content: input }],
               max_tokens: 500,
             };
@@ -141,6 +141,7 @@ export default {
 
             // 检查响应状态
             if (!openAIResponse.ok) {
+							//
               const errorText = await openAIResponse.text();
               console.error(`OpenAI API 错误: ${openAIResponse.status} ${errorText} ${openAIRequest}`);
 
